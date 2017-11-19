@@ -3,9 +3,6 @@
 div.container.featured-products.content
   h2 Featured Products
   // TODO: make product thumbnails links to product page
-  - @products.each do | product |
-    div.col-sm-4.product-thumbnail
-      = image_tag product.image
-      p = product.name
+  = render 'shared/show_products', collection: @products || 'No products'
 
 = render :partial => 'shared/footer'
