@@ -1,6 +1,10 @@
 = render :partial => 'shared/header'
-
-h1 Dunder Mifflin Online Store
-p That's what she said
+div.container.featured-products
+  h2 Featured Products
+  // TODO: make product thumbnails links to product page
+  - @products.each do | product |
+    div.col-sm-4.product-thumbnail
+      = image_tag product.image
+      p = product.name
 
 = render :partial => 'shared/footer'
