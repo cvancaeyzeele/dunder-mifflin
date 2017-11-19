@@ -1,0 +1,13 @@
+- if @products.count > 0
+  - @products.in_groups_of(3, false).each do | group |
+    div.row
+      - group.each do | product |
+        // TODO: make product thumbnails links to product page
+        div.col-sm-4.product-thumbnail
+          = image_tag product.image
+          p
+            = product.name
+            br
+            = link_to 'Details', product_path(product)
+- else
+  h2 No Products Found

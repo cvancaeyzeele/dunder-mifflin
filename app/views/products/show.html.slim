@@ -1,0 +1,19 @@
+// TODO: restyle this, possibly create a partial
+= render :partial => 'shared/header'
+
+div.container.featured-products.content
+  h1 = @product.name
+
+  = image_tag(@product.image)
+
+  div
+    h4 Description:
+    = @product.description
+    br
+    h4 Price:
+    = number_with_precision @product.price, :precision => 2
+    br
+    h4 Category: 
+    = @product.category.name
+
+= render :partial => 'shared/footer'

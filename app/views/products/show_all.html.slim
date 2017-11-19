@@ -1,0 +1,7 @@
+= render :partial => 'shared/header'
+
+div.container.featured-products.content
+  h1 Products
+  = render 'show_products', collection: @products || 'No products'
+
+= render :partial => 'shared/footer'
