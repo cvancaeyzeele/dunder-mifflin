@@ -1,0 +1,16 @@
+// TODO: restyle this, add header and footer, possibly create a partial
+h1 = @product.name
+
+= image_tag(@product.image)
+
+div
+  h4 Description:
+  = @product.description
+  br
+  h4 Price:
+  = number_with_precision @product.price, :precision => 2
+  br
+  h4 Category: 
+  = @product.category.name
+  br
+  h4 Add to Cart
