@@ -12,6 +12,6 @@ ActiveAdmin.register Product do
 #   permitted
 # end
 
-  permit_params :category_id, :name, :description, :price
+  permit_params :category_id, :name, :description, :price, :featured, :discount
 
 end
