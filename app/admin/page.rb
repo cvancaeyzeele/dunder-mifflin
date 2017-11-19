@@ -1,4 +1,4 @@
-ActiveAdmin.register Product do
+ActiveAdmin.register Page do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,6 +12,5 @@ ActiveAdmin.register Product do
 #   permitted
 # end
 
-  permit_params :category_id, :name, :description, :price, :featured, :discount
-
+  permit_params :title, :content
 end
