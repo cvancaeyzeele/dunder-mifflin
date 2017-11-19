@@ -1,6 +1,6 @@
 = render :partial => 'shared/header'
-
-h1 Dunder Mifflin Online Store
-p That's what she said
+div.container
+  - @products.each do | product |
+    p =product.name
 
 = render :partial => 'shared/footer'
