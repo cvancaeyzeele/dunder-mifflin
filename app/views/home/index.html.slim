@@ -1,5 +1,7 @@
 = render :partial => 'shared/header'
 div.container.featured-products
+  h2 Featured Products
+  // TODO: make product thumbnails links to product page
   - @products.each do | product |
     div.col-sm-4.product-thumbnail
       = image_tag product.image
