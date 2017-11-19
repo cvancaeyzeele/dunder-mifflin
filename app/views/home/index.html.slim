@@ -1,6 +1,8 @@
 = render :partial => 'shared/header'
-div.container
+div.container.featured-products
   - @products.each do | product |
-    p =product.name
+    div.col-sm-4.product-thumbnail
+      = image_tag product.image
+      p = product.name
 
 = render :partial => 'shared/footer'
