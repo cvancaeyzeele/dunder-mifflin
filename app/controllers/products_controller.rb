@@ -8,8 +8,8 @@ class ProductsController < ApplicationController
   end
 
   def category_show
-    @category_name = params[:name]
+    @category_name = params[:name].capitalize
 
-    @products = Category.find_by(name: params[:name].downcase).products
+    @products = Category.where("lower(name) = ?", params[:name].downcase).first.products
   end
 end
