@@ -8,6 +8,7 @@
    text-decoration: none;
  }
 
+ // Position footer at absolute bottom
  html, body {
    height: 100%;
  }
@@ -20,3 +21,12 @@
  .content {
    flex: 1 0 auto;
  }
+
+.card {
+  height: 400px;
+  padding: 10px;
+}
+
+.card-img-top {
+  height: 250px;
+}
