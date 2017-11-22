@@ -1,0 +1,4 @@
+dunder-mifflin:
+ image: dunder-mifflin
+ expose:
+ - 8080
