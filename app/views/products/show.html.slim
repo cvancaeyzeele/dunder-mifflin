@@ -1,19 +1,20 @@
-// TODO: restyle this, possibly create a partial
 = render :partial => 'shared/header'
 
-div.container.featured-products.content
+// TODO: add breadcrumbs back to category of product, home page
+
+div.container.content
   h1 = @product.name
+  div.row
+    div.col-sm
+      = image_tag(@product.image)
 
-  = image_tag(@product.image)
+    div.col-sm
+      h2 Placeholder for cart stuff
 
-  div
-    h4 Description:
-    = @product.description
-    br
-    h4 Price:
-    = number_with_precision @product.price, :precision => 2
-    br
-    h4 Category: 
-    = @product.category.name
+  div.row.product-details
+    div
+      = @product.description
+      br
+      = number_with_precision @product.price, :precision => 2
 
 = render :partial => 'shared/footer'
