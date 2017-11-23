@@ -6,6 +6,7 @@
           div.card
             = image_tag product.image, :class => "card-img-top"
             h4.card-title = product.name
+            p.card-text = number_to_currency(product.price, :unit => "$")
             = link_to 'Details', product_path(product)
 - else
   h2 No Products Found
