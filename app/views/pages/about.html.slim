@@ -1,8 +1,18 @@
-// TODO: Edit styles for About page
+// TODO: Add content 
 = render :partial => 'shared/header'
 
 div.container.content
-  p = @page.title
-  p = @page.content
+  h1 = @page.title
+  div.row
+    div.col-sm.about-left
+      = image_tag('michael-scott.jpg')
+      p.lead.image-caption Michael Scott, Regional Manager
+
+    div.col-sm.about-right
+      blockquote.blockquote 
+        p.mb-0 You miss 100&#37; of the shots you don't take.
+        footer.blockquote-footer Wayne Gretzky
+        footer.blockquote-footer Michael Scott
+      p = @page.content    
 
 = render :partial => 'shared/footer'
