@@ -2,6 +2,9 @@
 @import "bootstrap";
 @import "navbar";
 @import "home";
+@import "about";
+@import "contact";
+@import "products";
 
 // Remove underline on links
  a:link {
@@ -28,5 +31,8 @@
 }
 
 .card-img-top {
+  width:100%;
   height: 250px;
+  object-fit: cover;
+  overflow: hidden;
 }
