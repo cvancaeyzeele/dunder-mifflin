@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   def show_all
-    @products = Product.order(:name)
+    @products = if params[:search_term]
+                  search(params[:search_term], 'all')
+                else
+                  Product.order(:category_id).order(:name)
+                end
   end
 
   def show
@@ -10,6 +14,20 @@ class ProductsController < ApplicationController
   def category_show
     @category_name = params[:name].capitalize
 
-    @products = Category.where("lower(name) = ?", params[:name].downcase).first.products
+    @products = if params[:search_term]
+                  search(params[:search_term], 'category')
+                else
+                  Category.where("lower(name) = ?", params[:name].downcase).first.products 
+                end
+  end
+
+  def search(term, product_page_type)
+    if product_page_type == 'all'
+      Product.where('name LIKE ?', "%#{term}%")
+    elsif product_page_type == 'category'
+      Category.find_by(name: params[:name])
+              .products
+              .where('name LIKE ?', "%#{term}%")
+    end
   end
 end
