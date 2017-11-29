@@ -1,7 +1,8 @@
 = render :partial => 'shared/header'
 
 div.container.featured-products.content
-  h1 Products
+  = render 'shared/search', local: { path: show_all_path }
+  h2 Products
   = render 'shared/show_products', collection: @products || 'No products'
 
 = render :partial => 'shared/footer'
