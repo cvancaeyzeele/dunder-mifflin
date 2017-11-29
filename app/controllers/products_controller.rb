@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     @products = if params[:search_term]
                   search(params[:search_term], 'all')
                 else
-                  Product.order(:category_id).order(:name)
+                  Product.order(:name).page(params[:page]).per(6)
                 end
   end
 
@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @products = if params[:search_term]
                   search(params[:search_term], 'category')
                 else
-                  Category.where("lower(name) = ?", params[:name].downcase).first.products 
+                  Category.where("lower(name) = ?", params[:name].downcase).first.products.page(params[:page]).per(6)
                 end
   end
 
@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
       Category.find_by(name: params[:name])
               .products
               .where('name LIKE ?', "%#{term}%")
+              .page(params[:page]).per(6)
     end
   end
 end

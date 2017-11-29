@@ -4,5 +4,5 @@ div.container.featured-products.content
   = render 'shared/search', :local => { :path => category_products_path(@category_name) }  
   h2 = @category_name
   = render 'shared/show_products', collection: @products || 'No products'
-
+  = paginate @products
 = render :partial => 'shared/footer'
