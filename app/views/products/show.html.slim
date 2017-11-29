@@ -3,7 +3,8 @@
 // TODO: add breadcrumbs back to category of product, home page
 
 div.container.content
-  h1 = @product.name
+  = render 'shared/search', local: { path: show_all_path }  
+  h2 = @product.name
   div.row
     div.col-sm
       = image_tag(@product.image)
