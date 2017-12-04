@@ -6,7 +6,14 @@
           div.card
             = image_tag product.image, :class => "card-img-top"
             h4.card-title = product.name
-            p.card-text = number_to_currency(product.price, :unit => "$")
+            
+            // if discount > 0.0, display sale price 
+            - if product.discount > 0
+              p.card-text.text-danger 
+                del.text-muted = number_to_currency(product.price, :unit => "$")
+                = "    " + number_to_currency((product.price - (product.discount * product.price)), :unit => "$")
+            - else
+              p.card-text = number_to_currency(product.price, :unit => "$")
             = link_to 'Details', product_path(product)
             // TODO: create add to cart button
 - else
