@@ -40,6 +40,7 @@ gem 'devise'
 gem 'material_icons'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'seed_dump'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
